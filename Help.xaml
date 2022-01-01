@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="PaymentStation.Help"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PaymentStation"
+             mc:Ignorable="d">
+    <Viewbox Width="194" Height="30">
+        <Button x:Name="HelpButton" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Style="{StaticResource ImageButtonStyle}">
+            <StackPanel Orientation="Horizontal">
+                <Image  Style="{StaticResource HQImage}" Source="sources/Help.JPG"/>
+                <Label Content="Позвать на помощь" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Foreground="#FF333333" Padding="0,0,0,0" FontWeight="Light"/>
+            </StackPanel>
+        </Button>
+    </Viewbox>
+</UserControl>

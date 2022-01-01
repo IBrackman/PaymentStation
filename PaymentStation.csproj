@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="sources\Back.JPG" />
+    <None Remove="sources\CashPayment.JPG" />
+    <None Remove="sources\Help.JPG" />
+    <None Remove="sources\Info.JPG" />
+    <None Remove="sources\Logo.JPG" />
+    <None Remove="sources\ProfileSettings.JPG" />
+    <None Remove="sources\RubSym.jpg" />
+    <None Remove="sources\Settings.JPG" />
+    <None Remove="sources\Shield.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="sources\Back.JPG" />
+    <Resource Include="sources\CashPayment.JPG" />
+    <Resource Include="sources\Help.JPG" />
+    <Resource Include="sources\Info.JPG" />
+    <Resource Include="sources\Logo.JPG" />
+    <Resource Include="sources\ProfileSettings.JPG" />
+    <Resource Include="sources\RubSym.jpg" />
+    <Resource Include="sources\Settings.JPG" />
+    <Resource Include="sources\Shield.JPG" />
+  </ItemGroup>
+
+  </Project>
