@@ -10,9 +10,10 @@
         <local:Logo HorizontalAlignment="Left" Margin="58,37,58,37" VerticalAlignment="Top"/>
         <local:Reference HorizontalAlignment="Right" Margin="73,28,73,28" VerticalAlignment="Bottom"/>
         <local:Menu x:Name="UCMenu" HorizontalAlignment="Right" Margin="22,14,22,14" VerticalAlignment="Top"/>
-        <local:Back x:Name="UCBack" HorizontalAlignment="Left" Margin="71,89,71,89" VerticalAlignment="Bottom"/>
-        <local:Help x:Name="UCHelp" HorizontalAlignment="Left" Margin="55,28,55,28" VerticalAlignment="Bottom"/>
+        <local:ComplexButton x:Name="UCBackButton" ButtonTag="BackButton" ButtonOrietation="Horizontal" ButtonImageSource="sources/Back.JPG" ButtonText="Назад" ButtonSize="93, 40" ButtonFontSize="20" ButtonFontWeight="Light" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="71,89,71,89"/>
+        <local:ComplexButton x:Name="UCHelpButton" ButtonTag="HelpButton" ButtonOrietation="Horizontal" ButtonImageSource="sources/Help.JPG" ButtonText="Позвать на помощь" ButtonSize="203, 30" ButtonFontSize="20" ButtonForeground="#FF333333" ButtonFontWeight="Light" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="55,28,55,28"/>
         <local:CashPayment x:Name="UCCashPayment" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,120,0,0"/>
+        <local:ServicePaymentByPhoneNumber x:Name="UCServicePaymentByPhoneNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,0"/>
 
     </Grid>
 </UserControl>

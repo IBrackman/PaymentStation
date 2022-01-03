@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,17 +13,22 @@ namespace PaymentStation
         {
             InitializeComponent();
 
-            UCMenu.ButtonResize += ButtonResizeInvoker;
-            UCBack.ButtonResize += ButtonResizeInvoker;
-            UCHelp.ButtonResize += ButtonResizeInvoker;
+            UCBackButton.ButtonResize += ButtonResizeInvoker;
+            UCHelpButton.ButtonResize += ButtonResizeInvoker;
             UCCashPayment.ButtonResize += ButtonResizeInvoker;
+            UCMenu.ButtonResize += ButtonResizeInvoker;
+            UCServicePaymentByPhoneNumber.ButtonResize += ButtonResizeInvoker;
 
-            UCBack.BackButtonClick += ButtonClickInvoker;
-            UCHelp.HelpButtonClick += ButtonClickInvoker;
+            UCBackButton.ButtonClick += ButtonClickInvoker;
+            UCHelpButton.ButtonClick += ButtonClickInvoker;
             UCCashPayment.MakePaymentButtonClick += ButtonClickInvoker;
             UCMenu.ProfileSettingsButtonClick += ButtonClickInvoker;
             UCMenu.SettingsButtonClick += ButtonClickInvoker;
             UCMenu.InfoButtonClick += ButtonClickInvoker;
+            UCServicePaymentByPhoneNumber.KeyboardButtonClick += ButtonClickInvoker;
+            UCServicePaymentByPhoneNumber.ContinueButtonClick += ButtonClickInvoker;
+            UCServicePaymentByPhoneNumber.SendCodeButtonClick += ButtonClickInvoker;
+
         }
 
         public event RoutedEventHandler ButtonResize;
@@ -40,37 +45,36 @@ namespace PaymentStation
 
         public event RoutedEventHandler InfoButtonClick;
 
+        public event RoutedEventHandler KeyboardButtonClick;
+
+        public event RoutedEventHandler ContinueButtonClick;
+
+        public event RoutedEventHandler SendCodeButtonClick;
+
         private void ButtonClickInvoker(object sender, RoutedEventArgs e)
         {
-            switch (((Button)sender).Name)
+            var buttonClickHandlerDict = new Dictionary<string, RoutedEventHandler>
             {
-                case "BackButton":
-                    BackButtonClick?.Invoke(sender, e);
-                    break;
+                { nameof(BackButtonClick), BackButtonClick },
+                { nameof(HelpButtonClick), HelpButtonClick },
+                { nameof(MakePaymentButtonClick), MakePaymentButtonClick },
+                { nameof(ProfileSettingsButtonClick), ProfileSettingsButtonClick },
+                { nameof(SettingsButtonClick), SettingsButtonClick },
+                { nameof(InfoButtonClick), InfoButtonClick },
+                { nameof(KeyboardButtonClick), KeyboardButtonClick },
+                { nameof(ContinueButtonClick), ContinueButtonClick },
+                { nameof(SendCodeButtonClick), SendCodeButtonClick }
+            };
 
-                case "HelpButton":
-                    HelpButtonClick?.Invoke(sender, e);
-                    break;
-
-                case "MakePaymentButton":
-                    MakePaymentButtonClick?.Invoke(sender, e);
-                    break;
-
-                case "ProfileSettingsButton":
-                    ProfileSettingsButtonClick?.Invoke(sender, e);
-                    break;
-
-                case "SettingsButton":
-                    SettingsButtonClick?.Invoke(sender, e);
-                    break;
-
-                case "InfoButton":
-                    InfoButtonClick?.Invoke(sender, e);
-                    break;
-            }
+            buttonClickHandlerDict[$"{((Button)sender).Tag}Click"]?.Invoke(sender, e);
         }
 
-
         private void ButtonResizeInvoker(object sender, RoutedEventArgs e) => ButtonResize?.Invoke(sender, e);
+
+        public string GetVerificationCode() => UCServicePaymentByPhoneNumber.GetVerificationCode();
+
+        public void ChangeVerificationCode(ref string arg) => UCServicePaymentByPhoneNumber.ChangeVerificationCode(ref arg);
+
+        public void CodeCorrectness(bool correctness) => UCServicePaymentByPhoneNumber.CodeCorrectness(correctness);
     }
 }

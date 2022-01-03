@@ -15,13 +15,11 @@
                 <Label Content="10, 50, 100, 200, 500, 1000, 2000, 5000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="19.5" Margin="6,0,0,0" VerticalAlignment="Center" Padding="0,0,10,3" />
             </StackPanel>
             <local:PaymentDisplay x:Name="UCPaymentDisplay" HorizontalAlignment="Center" Margin="8,20,0,0" />
-            <Viewbox HorizontalAlignment="Center" Margin="5,8,0,0" Width="279">
-                <Border Background="Black" CornerRadius="15,15,15,15" HorizontalAlignment="Center">
-                    <Button x:Name="MakePaymentButton" Style="{StaticResource ImageButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,0,0">
-                        <Label Content="Внести платёж" FontSize="23" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="60,20,65,20"/>
-                    </Button>
-                </Border>
-            </Viewbox>
+            <local:ComplexButton x:Name="UCMakePaymentButton" ButtonTag="MakePaymentButton" ButtonText="Внести платёж" Margin="5,8,0,0" ButtonSize="277, 69" ButtonFontSize="23" ButtonBackground="Black" ButtonForeground="White" ButtonCornerRadius="15,15,15,15" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <local:ComplexButton.Effect>
+                    <DropShadowEffect Color="#FF00D7FF" Direction="270" ShadowDepth="10" BlurRadius="20" Opacity="0.1"/>
+                </local:ComplexButton.Effect>
+            </local:ComplexButton>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,25,0,0">
                 <Image Style="{StaticResource HQImage}" Source="sources/Shield.JPG" Height="20" Width="20" VerticalAlignment="Center"/>
                 <Label Content="ГАРАНТИЯ БЕЗОПАСНОСТИ ПЛАТЕЖЕЙ" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5,0,0,0" VerticalAlignment="Center" Padding="0,0,0,0" FontWeight="Light" FontSize="11"/>

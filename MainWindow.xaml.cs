@@ -15,7 +15,7 @@ namespace PaymentStation
             InitializeComponent();
 
             UCBaseLayer.UCCashPayment.Visibility = Visibility.Collapsed;
-            //UserControlMPVC.Visibility = Visibility.Collapsed;
+            UCBaseLayer.UCServicePaymentByPhoneNumber.Visibility = Visibility.Collapsed;
 
             UCBaseLayer.BackButtonClick += UCBaseLayer_BackButtonClick;
             UCBaseLayer.HelpButtonClick += UCBaseLayer_HelpButtonClick;
@@ -23,7 +23,9 @@ namespace PaymentStation
             UCBaseLayer.ProfileSettingsButtonClick += UCBaseLayer_ProfileSettingsButtonClick;
             UCBaseLayer.SettingsButtonClick += UCBaseLayer_SettingsButtonClick;
             UCBaseLayer.InfoButtonClick += UCBaseLayer_InfoButtonClick;
-            
+            UCBaseLayer.KeyboardButtonClick += UCBaseLayer_KeyboardButtonClick;
+            UCBaseLayer.ContinueButtonClick += UCBaseLayer_ContinueButtonClick;
+            UCBaseLayer.SendCodeButtonClick += UCBaseLayer_SendCodeButtonClick;
 
             UCBaseLayer.ButtonResize += ButtonResize;
         }
@@ -34,11 +36,11 @@ namespace PaymentStation
             {
                 case Key.D1:
                     UCBaseLayer.UCCashPayment.Visibility = Visibility.Visible;
-                    //UserControlMPVC.Visibility = Visibility.Collapsed;
+                    UCBaseLayer.UCServicePaymentByPhoneNumber.Visibility = Visibility.Collapsed;
                     break;
                 case Key.D2:
                     UCBaseLayer.UCCashPayment.Visibility = Visibility.Collapsed;
-                    //UserControlMPVC.Visibility = Visibility.Visible;
+                    UCBaseLayer.UCServicePaymentByPhoneNumber.Visibility = Visibility.Visible;
                     break;
                 case Key.Escape:
                     Application.Current.Shutdown();
@@ -48,32 +50,53 @@ namespace PaymentStation
 
         private void UCBaseLayer_BackButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(((Button)sender).Name);
+            MessageBox.Show(((Button)sender).Tag.ToString());
         }
 
         private void UCBaseLayer_HelpButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(((Button)sender).Name);
+            MessageBox.Show(((Button)sender).Tag.ToString());
         }
 
         private void UCBaseLayer_MakePaymentButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(((Button)sender).Name);
+            MessageBox.Show(((Button)sender).Tag.ToString());
         }
 
         private void UCBaseLayer_ProfileSettingsButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(((Button)sender).Name);
+            MessageBox.Show(((Button)sender).Tag.ToString());
         }
 
         private void UCBaseLayer_SettingsButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(((Button)sender).Name);
+            MessageBox.Show(((Button)sender).Tag.ToString());
         }
 
         private void UCBaseLayer_InfoButtonClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(((Button)sender).Name);
+            MessageBox.Show(((Button)sender).Tag.ToString());
+        }
+
+        private void UCBaseLayer_KeyboardButtonClick(object sender, RoutedEventArgs e)
+        {
+            var text = ((TextBlock)((Label)((StackPanel)((Button)sender).Content).Children[1]).Content).Text;
+            UCBaseLayer.ChangeVerificationCode(ref text);
+        }
+
+        private void UCBaseLayer_ContinueButtonClick(object sender, RoutedEventArgs e)
+        {
+            var code = "1234".GetHashCode();
+
+            if (UCBaseLayer.GetVerificationCode().GetHashCode() == code)
+                UCBaseLayer.CodeCorrectness(true);
+            else
+                UCBaseLayer.CodeCorrectness(false);
+        }
+
+        private void UCBaseLayer_SendCodeButtonClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(((Button)sender).Tag.ToString());
         }
 
         private void ButtonResize(object sender, RoutedEventArgs e)

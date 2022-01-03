@@ -6,39 +6,35 @@
              xmlns:local="clr-namespace:PaymentStation"
              mc:Ignorable="d">
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="3*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-                <Border Background="#FFFEFEFE" BorderBrush="#FF7A8082" CornerRadius="10,0,0,10" BorderThickness="1,1,0,1" Margin="5,0,0,-2">
-                    <Label Content="Всего к оплате"  FontSize="25" Margin="20,0,37,0" HorizontalAlignment="Left" Padding="5,0,5,5"/>
-                </Border>
-                <Border Background="#FFFEFEFE" BorderBrush="#FF7A8082" CornerRadius="0,10,10,0" BorderThickness="0,1,1,1"
-                        Grid.Row="0" Grid.Column="1" Margin="0,0,5,-2">
-                    <Label Content="9 000 ₽" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="30,0,15,0" Padding="5,0,5,5"/>
-                </Border>
-                <Border Background="#FFF14435" BorderBrush="#FF545859" CornerRadius="10,0,0,10" BorderThickness="1,1,0,1" Grid.Row="1"
-                        Grid.Column="0" Margin="0,-5,0,-5" Panel.ZIndex="1">
-                    <Label Content="Внесено" FontSize="29" FontWeight="SemiBold" Margin="25,0,37,0" HorizontalAlignment="Left" Foreground="White" Padding="5,0,5,5"/>
-                </Border>
-                <Border Background="#FFF14435" BorderBrush="#FF545859" CornerRadius="0,10,10,0" BorderThickness="0,1,1,1" Grid.Column="1" Grid.Row="1" Panel.ZIndex="1" Margin="0,-5,0,-5">
-                    <Label Content="5 000 ₽" FontSize="29" Margin="30,0,5,0" FontWeight="Bold" HorizontalAlignment="Right" Foreground="White" Padding="5,2,5,3"/>
-                </Border>
-                <Border Background="#FFE3E3E3" BorderBrush="#FF7A8082" CornerRadius="10,0,0,10" BorderThickness="1,1,0,1" Grid.Row="2"
-                        Grid.Column="0" Margin="5,-2,0,0">
-                    <Label Content="Осталось внести"  FontSize="27" Margin="20,0,37,0" HorizontalAlignment="Left" Padding="5,0,5,3"/>
-                </Border>
-                <Border Background="#FFE3E3E3" BorderBrush="#FF7A8082" CornerRadius="0,10,10,0" BorderThickness="0,1,1,1" Grid.Column="1" Grid.Row="2" Margin="0,-2,5,0">
-                    <Label Content="4 000 ₽" FontSize="27" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="30,0,10,0" Padding="5,2,5,3"/>
-                </Border>
-            </Grid>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Border Background="#FFFEFEFE" BorderBrush="#FF7A8082" CornerRadius="10,0,0,10" BorderThickness="1,1,0,1" Margin="5,0,0,-2">
+            <Label Content="Всего к оплате"  FontSize="25" Margin="20,0,37,0" HorizontalAlignment="Left" Padding="5,0,5,5"/>
+        </Border>
+        <Border Background="#FFFEFEFE" BorderBrush="#FF7A8082" CornerRadius="0,10,10,0" BorderThickness="0,1,1,1"
+                Grid.Row="0" Grid.Column="1" Margin="0,0,5,-2">
+            <Label Content="9 000 ₽" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="30,0,15,0" Padding="5,0,5,5"/>
+        </Border>
+        <Border Background="#FFF14435" BorderBrush="#FF545859" CornerRadius="10,0,0,10" BorderThickness="1,1,0,1" Grid.Row="1"
+                Grid.Column="0" Margin="0,-5,0,-5" Panel.ZIndex="1">
+            <Label Content="Внесено" FontSize="29" FontWeight="SemiBold" Margin="25,0,37,0" HorizontalAlignment="Left" Foreground="White" Padding="5,0,5,5"/>
+        </Border>
+        <Border Background="#FFF14435" BorderBrush="#FF545859" CornerRadius="0,10,10,0" BorderThickness="0,1,1,1" Grid.Column="1" Grid.Row="1" Panel.ZIndex="1" Margin="0,-5,0,-5">
+            <Label Content="5 000 ₽" FontSize="29" Margin="30,0,5,0" FontWeight="Bold" HorizontalAlignment="Right" Foreground="White" Padding="5,2,5,3"/>
+        </Border>
+        <Border Background="#FFE3E3E3" BorderBrush="#FF7A8082" CornerRadius="10,0,0,10" BorderThickness="1,1,0,1" Grid.Row="2"
+                Grid.Column="0" Margin="5,-2,0,0">
+            <Label Content="Осталось внести"  FontSize="27" Margin="20,0,37,0" HorizontalAlignment="Left" Padding="5,0,5,3"/>
+        </Border>
+        <Border Background="#FFE3E3E3" BorderBrush="#FF7A8082" CornerRadius="0,10,10,0" BorderThickness="0,1,1,1" Grid.Column="1" Grid.Row="2" Margin="0,-2,5,0">
+            <Label Content="4 000 ₽" FontSize="27" FontWeight="SemiBold" HorizontalAlignment="Right" Margin="30,0,10,0" Padding="5,2,5,3"/>
+        </Border>
     </Grid>
 </UserControl>

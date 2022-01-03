@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace PaymentStation
@@ -12,17 +13,12 @@ namespace PaymentStation
         {
             InitializeComponent();
 
-            ProfileSettingsButton.PreviewMouseDown += ButtonResizeInvoker;
-            SettingsButton.PreviewMouseDown += ButtonResizeInvoker;
-            InfoButton.PreviewMouseDown += ButtonResizeInvoker;
-
-            ProfileSettingsButton.PreviewMouseUp += ButtonResizeInvoker;
-            SettingsButton.PreviewMouseUp += ButtonResizeInvoker;
-            InfoButton.PreviewMouseUp += ButtonResizeInvoker;
-
-            ProfileSettingsButton.Click += ButtonClickInvoker;
-            SettingsButton.Click += ButtonClickInvoker;
-            InfoButton.Click += ButtonClickInvoker;
+            foreach (var child in ((StackPanel)Content).Children)
+                if (child.GetType() == typeof(ComplexButton))
+                {
+                    ((ComplexButton)child).ButtonResize += ButtonResizeInvoker;
+                    ((ComplexButton)child).ButtonClick += ButtonClickInvoker;
+                }
         }
 
         public event RoutedEventHandler ButtonResize;
@@ -35,20 +31,14 @@ namespace PaymentStation
 
         private void ButtonClickInvoker(object sender, RoutedEventArgs e)
         {
-            switch (((Button)sender).Name)
+            var buttonClickHandlerDict = new Dictionary<string, RoutedEventHandler>
             {
-                case "ProfileSettingsButton":
-                    ProfileSettingsButtonClick?.Invoke(sender, e);
-                    break;
+                { nameof(ProfileSettingsButtonClick), ProfileSettingsButtonClick },
+                { nameof(SettingsButtonClick), SettingsButtonClick },
+                { nameof(InfoButtonClick), InfoButtonClick }
+            };
 
-                case "SettingsButton":
-                    SettingsButtonClick?.Invoke(sender, e);
-                    break;
-
-                case "InfoButton":
-                    InfoButtonClick?.Invoke(sender, e);
-                    break;
-            }
+            buttonClickHandlerDict[$"{((Button)sender).Tag}Click"]?.Invoke(sender, e);
         }
 
         private void ButtonResizeInvoker(object sender, RoutedEventArgs e) => ButtonResize?.Invoke(sender, e);

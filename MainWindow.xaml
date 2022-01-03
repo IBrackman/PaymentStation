@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PaymentStation"
         mc:Ignorable="d"
-        Title="MainWindow" WindowStyle="None" KeyDown="Window_KeyDown" WindowStartupLocation="CenterScreen" MinWidth="1000" MinHeight="800" Width="1280" Height="1024">
+        Title="MainWindow" WindowStyle="SingleBorderWindow" KeyDown="Window_KeyDown" WindowStartupLocation="CenterScreen" MinWidth="1000" MinHeight="800" Width="1280" Height="1024">
     <Grid>
         <local:BaseLayer x:Name="UCBaseLayer"/>
     </Grid>

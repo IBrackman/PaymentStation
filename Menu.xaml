@@ -6,20 +6,8 @@
              xmlns:local="clr-namespace:PaymentStation"
              mc:Ignorable="d">
     <StackPanel Orientation="Horizontal">
-        <Viewbox Width="40" Height="40">
-            <Button x:Name="ProfileSettingsButton" HorizontalAlignment="Left" VerticalAlignment="Center" Width="40" Height="40" Style="{StaticResource ImageButtonStyle}">
-                <Image Style="{StaticResource HQImage}" Source="sources/ProfileSettings.JPG" />
-            </Button>
-        </Viewbox>
-        <Viewbox Width="40" Height="40" Margin="10,0,10,0">
-            <Button x:Name="SettingsButton" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40" Style="{StaticResource ImageButtonStyle}">
-                <Image Style="{StaticResource HQImage}" Source="sources/Settings.JPG" />
-            </Button>
-        </Viewbox>
-        <Viewbox Width="40" Height="40">
-            <Button x:Name="InfoButton" HorizontalAlignment="Right" VerticalAlignment="Center" Width="40" Height="40" Style="{StaticResource ImageButtonStyle}">
-                <Image Style="{StaticResource HQImage}" Source="sources/Info.JPG" />
-            </Button>
-        </Viewbox>
+        <local:ComplexButton x:Name="UCProfileSettingsButton" ButtonTag="ProfileSettingsButton" ButtonImageSource="sources/ProfileSettings.JPG" ButtonSize="40, 40"/>
+        <local:ComplexButton x:Name="UCSettingsButton" ButtonTag="SettingsButton" ButtonImageSource="sources/Settings.JPG" ButtonSize="40, 40" Margin="10,0,10,0"/>
+        <local:ComplexButton x:Name="UCInfoButton" ButtonTag="InfoButton" ButtonImageSource="sources/Info.JPG" ButtonSize="40, 40"/>
     </StackPanel>
 </UserControl>

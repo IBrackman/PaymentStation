@@ -12,17 +12,16 @@ namespace PaymentStation
         {
             InitializeComponent();
 
-            MakePaymentButton.PreviewMouseDown += ButtonResizeInvoker;
-            MakePaymentButton.PreviewMouseUp += ButtonResizeInvoker;
+            UCMakePaymentButton.ButtonResize += ButtonResizeInvoker;
 
-            MakePaymentButton.Click += MakePaymentButtonClickInvoker;
+            UCMakePaymentButton.ButtonClick += ButtonClickInvoker;
         }
 
         public event RoutedEventHandler ButtonResize;
 
         public event RoutedEventHandler MakePaymentButtonClick;
 
-        private void MakePaymentButtonClickInvoker(object sender, RoutedEventArgs e) => MakePaymentButtonClick?.Invoke(sender, e);
+        private void ButtonClickInvoker(object sender, RoutedEventArgs e) => MakePaymentButtonClick?.Invoke(sender, e);
 
         private void ButtonResizeInvoker(object sender, RoutedEventArgs e) => ButtonResize?.Invoke(sender, e);
     }

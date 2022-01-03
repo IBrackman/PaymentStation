@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="PaymentStation.IncorrectVerificationCode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PaymentStation"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <Label Content="Неверный код" FontSize="19" Padding="0,0,0,0" Foreground="#FFFD675E" FontWeight="Light"/>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Повторная отправка кода через" FontSize="19" Padding="0,0,0,0" Foreground="#FF333333" FontWeight="Light" VerticalContentAlignment="Center"/>
+            <Label Content="15..." FontSize="19" Padding="5,0,5,0" Width="45" HorizontalContentAlignment="Center" Foreground="#FF333333" FontWeight="Light" VerticalContentAlignment="Center"/>
+            <Label Content="секунд" FontSize="19" Padding="0,0,0,0" Foreground="#FF333333" FontWeight="Light" VerticalContentAlignment="Center"/>
+            <Image Source="sources/Clock.JPG" Style="{StaticResource HQImage}" Width="40" Height="40" Margin="10,0,0,0"/>
+        </StackPanel>
+        <local:ComplexButton x:Name="UCSendCodeButton" ButtonTag="SendCodeButton" ButtonText="Отправить код повторно" Style="{StaticResource ScreenKeyboard}" ButtonSize="170, 50" ButtonFontSize="18" ButtonFontWeight="Light" ButtonTextWrapping="Wrap" HorizontalAlignment="Right" Margin="0,10,0,0"/>
+    </StackPanel>
+</UserControl>

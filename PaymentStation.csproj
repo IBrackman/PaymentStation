@@ -9,9 +9,11 @@
   <ItemGroup>
     <None Remove="sources\Back.JPG" />
     <None Remove="sources\CashPayment.JPG" />
+    <None Remove="sources\Clock.JPG" />
     <None Remove="sources\Help.JPG" />
     <None Remove="sources\Info.JPG" />
     <None Remove="sources\Logo.JPG" />
+    <None Remove="sources\Phone.JPG" />
     <None Remove="sources\ProfileSettings.JPG" />
     <None Remove="sources\RubSym.jpg" />
     <None Remove="sources\Settings.JPG" />
@@ -21,9 +23,11 @@
   <ItemGroup>
     <Resource Include="sources\Back.JPG" />
     <Resource Include="sources\CashPayment.JPG" />
+    <Resource Include="sources\Clock.JPG" />
     <Resource Include="sources\Help.JPG" />
     <Resource Include="sources\Info.JPG" />
     <Resource Include="sources\Logo.JPG" />
+    <Resource Include="sources\Phone.JPG" />
     <Resource Include="sources\ProfileSettings.JPG" />
     <Resource Include="sources\RubSym.jpg" />
     <Resource Include="sources\Settings.JPG" />

@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="PaymentStation.ServicePaymentByPhoneNumber"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PaymentStation"
+             mc:Ignorable="d">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Оплата технического обслуживания по номеру телефона" FontSize="41" TextAlignment="Center" TextWrapping="Wrap" Width="800" LineStackingStrategy="BlockLineHeight" LineHeight="46"/>
+            <Label Content="Введите код из СМС" HorizontalContentAlignment="Center" FontSize="27" FontWeight="Light" Margin="0,25,0,0"/>
+            <StackPanel Orientation="Horizontal" Margin="0,37,0,0">
+                <Image Source="sources/Phone.JPG" Style="{StaticResource HQImage}" Width="80" Height="80" VerticalAlignment="Top" Margin="0,4,15,4"/>
+                <StackPanel Orientation="Vertical">
+                    <local:ScreenKeyboardInput x:Name="UCScreenKeyboardInput" Style="{StaticResource Shadow}" VerificationCodeMaxLength="4" Margin="0,0,10,0"/>
+                    <local:IncorrectVerificationCode x:Name="UCIncorrectVerificationCode" Margin="20,20,20,0"/>
+                </StackPanel>
+                <local:ScreenKeyboard x:Name="UCScreenKeyboard" Margin="55,0,10,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

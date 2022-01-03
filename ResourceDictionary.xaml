@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:paymentStation="clr-namespace:PaymentStation">
 
-    <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+    <Style TargetType="{x:Type Button}" x:Key="EmptyButtonStyle">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -14,5 +15,26 @@
     <Style TargetType="Image" x:Key="HQImage">
         <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
     </Style>
+
+    <Style TargetType="UserControl" x:Key="Shadow">
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Direction="270" ShadowDepth="15" BlurRadius="30" Opacity="0.1" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="paymentStation:ComplexButton" x:Key="ScreenKeyboard" BasedOn="{StaticResource Shadow}">
+        <Setter Property="ButtonTag" Value="KeyboardButton"/>
+        <Setter Property="ButtonSize" Value="80, 70"/>
+        <Setter Property="ButtonFontSize" Value="18"/>
+        <Setter Property="ButtonBackground" Value="White"/>
+        <Setter Property="ButtonForeground" Value="Black"/>
+        <Setter Property="ButtonBorderBrush" Value="#FF7A8082"/>
+        <Setter Property="ButtonCornerRadius" Value="15,15,15,15"/>
+        <Setter Property="ButtonBorderThickness" Value="1,1,1,1"/>
+        <Setter Property="Margin" Value="10,7,10,7"/>
+    </Style>
+
 
 </ResourceDictionary>
